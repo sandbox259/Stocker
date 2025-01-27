@@ -153,6 +153,7 @@ public class MatchingEngineDemo {
             } catch (InterruptedException e) {
                 System.err.println("Thread interrupted: " + e.getMessage());
             }
+
         }
 
         engine.displayOrders();
