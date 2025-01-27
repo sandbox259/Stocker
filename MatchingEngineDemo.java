@@ -138,8 +138,19 @@ public class MatchingEngineDemo {
         Random random = new Random();
         double basePrice = 75.0; // Set base price to reduce volatility
 
-        for (int i = 0; i < 50; i++) {
-            Order.OrderType type = random.nextBoolean() ? Order.OrderType.BUY : Order.OrderType.SELL;
+        int totalOrders = 20; // Total number of orders
+        int buyOrderCount = 0; // Counter for buy orders
+
+        for (int i = 0; i < totalOrders; i++) {
+            // Alternate between buy and sell orders
+            Order.OrderType type;
+            if (i % 2 == 0 && buyOrderCount < totalOrders / 2) {
+                type = Order.OrderType.BUY;
+                buyOrderCount++; // Increment buy order counter
+            } else {
+                type = Order.OrderType.SELL;
+            }
+
             double price = basePrice + (random.nextDouble() * 10 - 5); // Price variation between -5 and +5
             int quantity = 1 + random.nextInt(100); // Quantity between 1 and 100
             // System.out.println(quantity);
