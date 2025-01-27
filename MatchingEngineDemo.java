@@ -151,7 +151,7 @@ public class MatchingEngineDemo {
                 type = Order.OrderType.SELL;
             }
 
-            double price = basePrice + (random.nextDouble() * 10 - 5); // Price variation between -5 and +5
+            double price = basePrice + (random.nextDouble() * 2 - 1); // Price variation between -5 and +5
             int quantity = 1 + random.nextInt(100); // Quantity between 1 and 100
             // System.out.println(quantity);
 
